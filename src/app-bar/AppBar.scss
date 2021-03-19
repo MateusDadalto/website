@@ -1,0 +1,36 @@
+@import '../theme/themes.scss';
+
+$menu-padding: 2rem;
+
+.root {
+    display: flex;
+    flex-grow: 1;
+
+    @include themify($themes) {
+        color: themed($secondaryColor);
+    }
+}
+
+.menu-text {
+    margin: 0.8rem 2rem;
+}
+
+.menu {
+    flex-grow: 1;
+    display: flex;
+}
+
+.left {
+    align-self: flex-start;
+    padding-left: $menu-padding;
+}
+
+.right{
+    align-self: flex-end;
+    justify-content: flex-end;
+    padding-right: $menu-padding;
+}
+
+.title {
+    flex-grow: 1;
+}

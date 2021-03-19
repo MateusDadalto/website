@@ -1,0 +1,44 @@
+// keys
+$backgroundColor: 'backgroundColor';
+$primaryColor: 'primaryColor';
+$secondaryColor: '$secondaryColor';
+$smallFontSize: 'smallFontSize';
+$defaultFontSize: 'defaultFontSize';
+
+// 
+$themes: (
+    dark: (
+        $backgroundColor: #070707,
+        $primaryColor: #F0BC5E,
+        $secondaryColor: #F0973E,
+        $smallFontSize: 0.9rem,
+        $defaultFontSize: 1rem,
+    ),
+);
+
+
+// taken from: https://medium.com/@dmitriy.borodiy/easy-color-theming-with-scss-bc38fd5734d1
+
+@mixin themify($themes: $themes) {
+    @each $theme, $map in $themes {
+        .theme-#{$theme} & {
+            $theme-map: () !global;
+            @each $key, $submap in $map {
+                $value: map-get(map-get($themes, $theme), "#{$key}");
+                $theme-map: map-merge(
+                    $theme-map,
+                    (
+                        $key: $value,
+                    )
+                ) !global;
+            }
+
+            @content;
+            $theme-map: null !global;
+        }
+    }
+}
+
+@function themed($key) {
+    @return map-get($theme-map, $key);
+}

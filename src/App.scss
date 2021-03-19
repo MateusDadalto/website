@@ -1,0 +1,10 @@
+@import './theme/themes.scss';
+
+.App {
+  text-align: center;
+  min-height: 100vh;
+
+  @include themify($themes) {
+    background-color: themed($backgroundColor);
+  }
+}
