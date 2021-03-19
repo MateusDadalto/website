@@ -1,0 +1,18 @@
+@import "../theme/themes.scss";
+
+.content {
+    display: flex;
+    flex: 1 1 auto;
+
+    @include themify($themes) {
+        color: themed($primaryColor);
+    }
+
+    .side-joke {
+        flex-grow: 1;
+    }
+
+    .info {
+        flex-grow: 4;
+    }
+}

@@ -15,7 +15,7 @@ function BarButton(props: BarButtonProps) {
 
 export default function MyAppBar() {
     return (
-        <div className="root">
+        <div className="app-bar">
             <div className="menu left">
                 <BarButton text="Mateus Dutra Dadalto"></BarButton>
 

@@ -1,36 +1,36 @@
 @import '../theme/themes.scss';
 
-$menu-padding: 2rem;
+$default-distance: 3rem;
 
-.root {
+.app-bar {
     display: flex;
-    flex-grow: 1;
+    flex-grow: 0 1 auto;
 
     @include themify($themes) {
+        font-size: 1.3rem;
         color: themed($secondaryColor);
     }
-}
 
-.menu-text {
-    margin: 0.8rem 2rem;
-}
-
-.menu {
-    flex-grow: 1;
-    display: flex;
-}
-
-.left {
-    align-self: flex-start;
-    padding-left: $menu-padding;
-}
-
-.right{
-    align-self: flex-end;
-    justify-content: flex-end;
-    padding-right: $menu-padding;
-}
-
-.title {
-    flex-grow: 1;
+    .menu-text {
+        margin: 0.8rem $default-distance;
+    }
+    
+    .menu {
+        flex-grow: 1;
+        display: flex;
+    }
+    
+    .left {
+        align-self: flex-start;
+        padding-left: $default-distance;
+    }
+    
+    .right{
+        justify-content: flex-end;
+        padding-right: $default-distance;
+    }
+    
+    .title {
+        flex-grow: 1;
+    }
 }
