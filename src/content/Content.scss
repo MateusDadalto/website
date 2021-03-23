@@ -1,18 +1,20 @@
 @import "../theme/themes.scss";
 
 .content {
-    display: flex;
+    display: grid;
     flex: 1 1 auto;
+    font-family: "Inconsolata", monospace;
+    grid-template-columns: repeat(12, 1fr);
+    grid-template-rows: repeat(18, 150px);
+    gap: 1rem;
+    margin: 0 200px;
 
-    @include themify($themes) {
-        color: themed($primaryColor);
-    }
-
-    .side-joke {
-        flex-grow: 1;
-    }
-
-    .info {
-        flex-grow: 4;
+    .test{
+        background-color: yellow;
+        grid-column: 3 / span 4;
+        grid-row: 3;
+        max-width: 100%;
+        overflow: hidden;
+        margin-left: 20px;
     }
 }

@@ -1,10 +1,11 @@
 @import '../theme/themes.scss';
 
-$default-distance: 3rem;
+$default-distance: 2.5rem;
 
 .app-bar {
     display: flex;
     flex-grow: 0 1 auto;
+    font-family: 'Cantarell', sans-serif;
 
     @include themify($themes) {
         font-size: 1.3rem;
@@ -12,7 +13,7 @@ $default-distance: 3rem;
     }
 
     .menu-text {
-        margin: 0.8rem $default-distance;
+        margin: 0.5rem $default-distance;
     }
     
     .menu {
